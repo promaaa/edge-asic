@@ -1,0 +1,17 @@
+# Ignorer les fichiers temporaires
+*.log
+*.vcd
+*.out
+*.o
+*.pyc
+__pycache__/
+
+# Fichiers générés
+build/
+output/
+sim/
+
+# Fichiers d’éditeur
+.vscode/
+.idea/
+
