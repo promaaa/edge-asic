@@ -47,3 +47,87 @@ https://github.com/22nds/nand2tetris/blob/master/book/chapter%2001.pdf
     Prépare le terrain pour des optimisations comme le **carry-lookahead**.
 - **Incrementer** : Circuit spécifique pour ajouter 1 à un nombre binaire.  
   Peut être optimisé car l’un des opérandes est constant.
+
+# Simulation 7 + 8
+
+## Contexte
+Vérification de l’addition 7 + 8 sur l’ALU 8 bits (`alu8.v`) via le testbench `add7_plus_8.v`.
+**Commande de lancement :**
+
+```bash
+iverilog -o rtl/results/add7_plus_8 rtl/alu8.v tests/add7_plus_8.v
+rtl/results/vvp add7_plus_8$
+```
+
+
+
+# Planning samedi — B-roll & commit
+
+Travaille en 3 créneaux de 60 min, puis finalise par un commit & push.
+
+---
+
+## Slot 1 (60 min) — Préparation & B-roll oscillo
+
+1. **Configurer OBS (10 min)**  
+   - Charge la scène “dual-screen” (écran + webcam).  
+   - Place et allume la ring-light pour éclairage uniforme.  
+   - Branche et teste le micro Lavalier (niveau + monitoring casque).  
+   - Vérifie que ta zone de capture affiche l’oscilloscope et un coin webcam.
+
+2. **Filmer l’oscilloscope (40 min)**  
+   - **Plan large** (face à l’écran) pendant ~10 s, échelle lente.  
+   - **Plan serré** sur l’écran (détails de la grille) pendant ~10 s.  
+   - **Plan sur les commandes** (boutons/knobs) pendant ~10 s.  
+   - **Plan du câblage** (sondes, entrées) pendant ~10 s.  
+   - Entre chaque prise, change l’échelle de temps (ms/div → μs/div).
+
+3. **Vérifier et ranger les rushes (10 min)**  
+   - Relis rapidement chaque clip pour confirmer qu’ils sont nets.  
+   - Renomme-les en `oscillo_01.mp4`, `oscillo_02.mp4`, etc.  
+   - Déplace-les dans :  
+     ```
+     video1/broll/oscillo/
+     ```
+
+---
+
+## Slot 2 (60 min) — B-roll VS Code & board
+
+1. **Filmer VS Code (30 min)**  
+   - **Plan serré** sur l’édition Verilog (`rtl/alu8.v`) pendant ~10 s.  
+   - **Plan sur KiCad** si tu as un schéma, pendant ~10 s.  
+   - **Plan d’ensemble** du clavier + écran éditorial, pendant ~10 s.
+
+2. **Filmer le board FPGA (25 min)**  
+   - **Vue globale** du Pynq-Z2 alimenté (1 prise ~10 s).  
+   - **Plan serré** sur les branchements (HDMI, alimentation, JTAG) ~10 s.  
+   - **Détail des broches** utilisées par ton montage (5 s).
+
+3. **Vérifier et ranger (5 min)**  
+   - Jette un œil rapide aux vidéos (focus, luminosité).  
+   - Renomme en `code_01.mp4`, `board_01.mp4`, etc.  
+   - Range dans :  
+     ```
+     video1/broll/code_board/
+     ```
+
+---
+
+## Slot 3 (60 min) — Commit & push
+
+1. **Préparer le commit (10 min)**  
+   - Vérifie la structure de dossiers :  
+     ```
+     video1/broll/oscillo/
+     video1/broll/code_board/
+     ```
+   - Lance ton script CI local pour t’assurer qu’il n’y a pas d’erreur :  
+     ```bash
+     ./run_ci.sh
+     ```
+
+2. **Ajouter et committer (15 min)**  
+   ```bash
+   git add video1/broll/oscillo/* video1/broll/code_board/*
+   git commit -m "video1: ajout B-roll oscillo & code_board"

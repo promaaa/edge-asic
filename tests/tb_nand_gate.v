@@ -1,35 +1,36 @@
 `timescale 1ns/1ps
 
-module nand_gate_tb;
-
-  parameter WIDTH = 4;
-
-  reg  [WIDTH-1:0] a;
-  reg  [WIDTH-1:0] b;
-  wire [WIDTH-1:0] y;
-
-  // Instanciation du module nand_gate
-  nand_gate #(WIDTH) uut (
-    .a(a),
-    .b(b),
-    .y(y)
+module tb_nand_gate;
+  // Signaux de test
+  reg [0:0] test_a;
+  reg [0:0] test_b;
+  wire [0:0] test_y;
+  
+  // Instanciation du module à tester
+  nand_gate #(.WIDTH(1)) dut (
+    .a(test_a),
+    .b(test_b),
+    .y(test_y)
   );
-
+  
+  // Procédure de test
   initial begin
-    $dumpfile("waveform.vcd");
-    $dumpvars(0, nand_gate_tb);
-
-    // Cas de test
-    a = 4'b0000; b = 4'b0000; #10;
-    a = 4'b1100; b = 4'b1010; #10;
-    a = 4'b1111; b = 4'b1111; #10;
-    a = 4'b0101; b = 4'b1010; #10;
-
+    $dumpfile("nand_gate.vcd");
+    $dumpvars(0, tb_nand_gate);
+    
+    // Test des 4 combinaisons possibles
+    test_a = 0; test_b = 0; #10;
+    $display("a=%b, b=%b, y=%b", test_a, test_b, test_y);
+    
+    test_a = 0; test_b = 1; #10;
+    $display("a=%b, b=%b, y=%b", test_a, test_b, test_y);
+    
+    test_a = 1; test_b = 0; #10;
+    $display("a=%b, b=%b, y=%b", test_a, test_b, test_y);
+    
+    test_a = 1; test_b = 1; #10;
+    $display("a=%b, b=%b, y=%b", test_a, test_b, test_y);
+    
     $finish;
   end
-
-  initial begin
-    $monitor("Time = %0t | a = %b | b = %b | y = %b", $time, a, b, y);
-  end
-
 endmodule

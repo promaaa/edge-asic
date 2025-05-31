@@ -10,7 +10,7 @@ Mes motivations :
 - Apprendre à optimiser les compromis matériels : latence, énergie, coût.
 - M’éloigner de la pure théorie pour acquérir une vraie compétence d’intégration.
 
-## 2. Mon projet en pratique
+## 2. Le projet en pratique
 
 J’ai défini une feuille de route progressive sur 6 mois pour monter en compétence étape par étape :
 
@@ -24,7 +24,7 @@ J’ai défini une feuille de route progressive sur 6 mois pour monter en compé
 
 Chaque bloc donnera lieu à des livrables fonctionnels (simulations, démos réelles, benchmarks).
 
-## 3. Pourquoi j’ai besoin de ce matériel
+## 3. Matériel
 
 Le matériel dont j'aurai besoin et pourquoi :
 
@@ -34,7 +34,7 @@ Le matériel dont j'aurai besoin et pourquoi :
 - **Analyseur logique, oscilloscope, INA219** : observer les signaux, mesurer les timings et la consommation réelle.
 - **Accès au labo** : pour les équipements lourds (alim, debug JTAG, environnement de simulation).
 
-## 4. Mon ambition personnelle
+## 4. Ambition perso
 
 À l’issue de ce projet, je veux :
 - Être capable de concevoir un accélérateur Edge AI simple et optimisé.
